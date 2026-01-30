@@ -709,32 +709,45 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                     </div>
                 </div></div>
 
-    <script type="module">
+        <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
         import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
         import { getFirestore, doc, setDoc, getDoc, onSnapshot, runTransaction } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
 
-        // Config fallback
-        const firebaseConfig = JSON.parse(window.__firebase_config || '{}');
-        const appId = window.__app_id || 'poke-v31-ultra';
+        // 🟢 RESTORED YOUR KEYS HERE 🟢
+        const firebaseConfig = {
+          apiKey: "AIzaSyCKmkalPeggoq0y5OUUzFlyVoVJnKCGqvU",
+          authDomain: "pokemon-pvp-12f30.firebaseapp.com",
+          projectId: "pokemon-pvp-12f30",
+          storageBucket: "pokemon-pvp-12f30.firebasestorage.app",
+          messagingSenderId: "947032047271",
+          appId: "1:947032047271:web:22c7966896f0cd36c2e582"
+        };
+        // ---------------------------------------------------
 
         window.initFirebase = async () => {
             try {
                 const app = initializeApp(firebaseConfig);
                 const auth = getAuth(app);
                 const db = getFirestore(app);
+                
                 await signInAnonymously(auth);
+                
                 window.GAME_USER = auth.currentUser; 
                 window.GAME_DB = db; 
-                window.APP_ID = appId; 
+                window.APP_ID = "poke-v31-ultra"; // Updated ID for new version
                 window.IS_ONLINE = true;
+                
                 window.db_doc = doc; 
                 window.db_setDoc = setDoc; 
                 window.db_getDoc = getDoc; 
                 window.db_onSnapshot = onSnapshot; 
                 window.db_runTransaction = runTransaction;
+
                 updateOnlineStatus(true);
+                console.log("✅ Firebase Connected Successfully!");
             } catch (e) { 
+                console.error("Connection failed:", e);
                 window.IS_ONLINE = false; 
                 updateOnlineStatus(false);
             }
@@ -749,7 +762,8 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         };
         
         window.initFirebase();
-    </script>
+        </script>
+        
         
     <script>
         // --- DATA & CONFIG ---
