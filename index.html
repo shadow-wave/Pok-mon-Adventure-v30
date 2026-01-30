@@ -844,9 +844,6 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         };
             
 
-            play: (n, d) => AUDIO.synth && AUDIO.synth.triggerAttackRelease(n, d)
-        };
-
         let state = { player: { name: 'Player', wins: 0 }, team: [], box: [], bag: { potions: 5, balls: 10 }, battleParty: [] };
         let battle = null;
         let mpUnsub = null;
