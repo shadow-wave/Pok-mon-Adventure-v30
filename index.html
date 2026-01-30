@@ -1245,7 +1245,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             renderBattle();
         };
 
-        const executeMoveAnimation = async (atk, def, mName, isP1) => {
+                const executeMoveAnimation = async (atk, def, mName, isP1) => {
             const m = MOVES[mName] || MOVES['Tackle'];
             const log = document.getElementById('log-text');
             log.innerText = `${atk.name} used ${mName}!`;
@@ -1255,12 +1255,19 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
             if(m.category === 'Physical') {
                 sprite.classList.add(isP1 ? 'anim-lunge-right' : 'anim-lunge-left');
-                await wait(200); AUDIO.sfx.hit();
+                await wait(200); 
+                AUDIO.sfx.hit();
                 sprite.classList.remove(isP1 ? 'anim-lunge-right' : 'anim-lunge-left');
                 targetSpr.classList.add('anim-hit'); 
             } else {
+                // Play specific element sound
+                if(m.type === 'Fire') AUDIO.sfx.fire();
+                else if(m.type === 'Water') AUDIO.sfx.water();
+                else if(m.type === 'Electric') AUDIO.sfx.electric();
+                else if(m.type === 'Psychic' || m.type === 'Ghost') AUDIO.sfx.psychic();
+                else AUDIO.sfx.heavy();
+
                 await spawnVFX(m.type, sprite, targetSpr);
-                AUDIO.sfx.super();
             }
 
             // Global Impact Shake
@@ -1270,6 +1277,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             container.classList.remove('anim-shake');
             targetSpr.classList.remove('anim-hit');
         };
+            
 
         const aiTurn = () => window.doAction(battle.eParty[battle.eActive].moves[Math.floor(Math.random()*battle.eParty[battle.eActive].moves.length)]);
 
