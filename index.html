@@ -763,10 +763,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         
         window.initFirebase();
         </script>
-        
-        
-    <script>
-                    // --- DATA & CONFIG ---
+             // --- DATA & CONFIG ---
         const TYPES = { Normal: { Rock: 0.5, Ghost: 0 }, Fire: { Grass: 2, Ice: 2, Bug: 2, Steel: 2, Water: 0.5 }, Water: { Fire: 2, Ground: 2, Rock: 2, Grass: 0.5 }, Electric: { Water: 2, Flying: 2, Ground: 0 }, Grass: { Water: 2, Ground: 2, Rock: 2, Fire: 0.5 }, Ice: { Grass: 2, Ground: 2, Dragon: 2, Fire: 0.5 }, Fighting: { Normal: 2, Rock: 2, Steel: 2, Ice: 2 }, Poison: { Grass: 2 }, Ground: { Fire: 2, Electric: 2, Rock: 2 }, Flying: { Fighting: 2, Bug: 2, Grass: 2 }, Psychic: { Fighting: 2, Poison: 2 }, Bug: { Grass: 2, Psychic: 2 }, Rock: { Fire: 2, Ice: 2, Flying: 2, Bug: 2 }, Ghost: { Psychic: 2, Ghost: 2 }, Dragon: { Dragon: 2 } };
         
         const MOVES = {
@@ -776,7 +773,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             'Karate Chop': { power: 50, type: 'Fighting', category: 'Physical' },
             'Rock Slide': { power: 75, type: 'Rock', category: 'Physical' },
             'Growl': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', stat: 'atk', stages: -1 } },
-            'Sing': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', status: 'par', chance: 0.5 } }, // Sleep acts like Paralyze here
+            'Sing': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', status: 'par', chance: 0.5 } }, 
             'Vine Whip': { power: 45, type: 'Grass', category: 'Physical' }, 
             'Razor Leaf': { power: 55, type: 'Grass', category: 'Physical' },
             'Ember': { power: 40, type: 'Fire', category: 'Special', effect: { target: 'opponent', status: 'brn', chance: 0.2 } }, 
@@ -842,8 +839,9 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             },
             play: (n, d) => AUDIO.synth && AUDIO.synth.triggerAttackRelease(n, d)
         };
-            
 
+    <script>
+                    
         let state = { player: { name: 'Player', wins: 0 }, team: [], box: [], bag: { potions: 5, balls: 10 }, battleParty: [] };
         let battle = null;
         let mpUnsub = null;
