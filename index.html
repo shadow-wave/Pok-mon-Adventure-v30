@@ -766,66 +766,84 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         
         
     <script>
-        // --- DATA & CONFIG ---
+                    // --- DATA & CONFIG ---
         const TYPES = { Normal: { Rock: 0.5, Ghost: 0 }, Fire: { Grass: 2, Ice: 2, Bug: 2, Steel: 2, Water: 0.5 }, Water: { Fire: 2, Ground: 2, Rock: 2, Grass: 0.5 }, Electric: { Water: 2, Flying: 2, Ground: 0 }, Grass: { Water: 2, Ground: 2, Rock: 2, Fire: 0.5 }, Ice: { Grass: 2, Ground: 2, Dragon: 2, Fire: 0.5 }, Fighting: { Normal: 2, Rock: 2, Steel: 2, Ice: 2 }, Poison: { Grass: 2 }, Ground: { Fire: 2, Electric: 2, Rock: 2 }, Flying: { Fighting: 2, Bug: 2, Grass: 2 }, Psychic: { Fighting: 2, Poison: 2 }, Bug: { Grass: 2, Psychic: 2 }, Rock: { Fire: 2, Ice: 2, Flying: 2, Bug: 2 }, Ghost: { Psychic: 2, Ghost: 2 }, Dragon: { Dragon: 2 } };
         
         const MOVES = {
             'Tackle': { power: 40, type: 'Normal', category: 'Physical' }, 
             'Scratch': { power: 40, type: 'Normal', category: 'Physical' },
+            'Bite': { power: 60, type: 'Normal', category: 'Physical', effect: { target: 'opponent', stat: 'def', stages: -1 } },
+            'Karate Chop': { power: 50, type: 'Fighting', category: 'Physical' },
+            'Rock Slide': { power: 75, type: 'Rock', category: 'Physical' },
             'Growl': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', stat: 'atk', stages: -1 } },
-            'Tail Whip': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', stat: 'def', stages: -1 } },
+            'Sing': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', status: 'par', chance: 0.5 } }, // Sleep acts like Paralyze here
             'Vine Whip': { power: 45, type: 'Grass', category: 'Physical' }, 
             'Razor Leaf': { power: 55, type: 'Grass', category: 'Physical' },
-            'Poison Powder': { power: 0, type: 'Poison', category: 'Status', effect: { target: 'opponent', status: 'psn', chance: 1.0 } },
             'Ember': { power: 40, type: 'Fire', category: 'Special', effect: { target: 'opponent', status: 'brn', chance: 0.2 } }, 
             'Flamethrower': { power: 90, type: 'Fire', category: 'Special', effect: { target: 'opponent', status: 'brn', chance: 0.1 } },
             'Water Gun': { power: 40, type: 'Water', category: 'Special' }, 
             'Hydro Pump': { power: 110, type: 'Water', category: 'Special' },
+            'Confusion': { power: 50, type: 'Psychic', category: 'Special' },
             'Thunder Shock': { power: 40, type: 'Electric', category: 'Special', effect: { target: 'opponent', status: 'par', chance: 0.3 } }, 
             'Thunderbolt': { power: 90, type: 'Electric', category: 'Special', effect: { target: 'opponent', status: 'par', chance: 0.1 } },
             'Shadow Ball': { power: 80, type: 'Ghost', category: 'Special' }, 
-            'Rock Throw': { power: 50, type: 'Rock', category: 'Physical' },
             'Ice Beam': { power: 90, type: 'Ice', category: 'Special', effect: { target: 'opponent', status: 'frz', chance: 0.1 } }, 
             'Psychic': { power: 90, type: 'Psychic', category: 'Special' },
             'Hyper Beam': { power: 150, type: 'Normal', category: 'Special' }, 
-            'Drill Peck': { power: 80, type: 'Flying', category: 'Physical' },
+            'Dragon Rage': { power: 80, type: 'Dragon', category: 'Special' },
             'Quick Attack': { power: 40, type: 'Normal', category: 'Physical' }
         };
 
         const POKEMON = {
-            'Bulbasaur': { id: 1, type: ['Grass'], hp: 45, atk: 49, def: 49, moves: ['Tackle', 'Vine Whip', 'Growl', 'Poison Powder'], evolvesTo: 'Ivysaur', evolvesAt: 16 }, 
-            'Ivysaur': { id: 2, type: ['Grass'], hp: 60, atk: 62, def: 63, moves: ['Tackle', 'Razor Leaf', 'Growl', 'Poison Powder'], evolvesTo: 'Venusaur', evolvesAt: 32 }, 
-            'Venusaur': { id: 3, type: ['Grass'], hp: 80, atk: 82, def: 83, moves: ['Razor Leaf', 'Tackle', 'Growl', 'Poison Powder'] }, 
-            'Charmander': { id: 4, type: ['Fire'], hp: 39, atk: 52, def: 43, moves: ['Scratch', 'Ember', 'Growl', 'Flamethrower'], evolvesTo: 'Charmeleon', evolvesAt: 16 }, 
-            'Charmeleon': { id: 5, type: ['Fire'], hp: 58, atk: 64, def: 58, moves: ['Flamethrower', 'Scratch', 'Growl', 'Ember'], evolvesTo: 'Charizard', evolvesAt: 36 }, 
-            'Charizard': { id: 6, type: ['Fire', 'Flying'], hp: 78, atk: 84, def: 78, moves: ['Flamethrower', 'Scratch', 'Drill Peck', 'Growl'] }, 
-            'Squirtle': { id: 7, type: ['Water'], hp: 44, atk: 48, def: 65, moves: ['Tackle', 'Water Gun', 'Tail Whip', 'Hydro Pump'], evolvesTo: 'Wartortle', evolvesAt: 16 }, 
-            'Wartortle': { id: 8, type: ['Water'], hp: 59, atk: 63, def: 80, moves: ['Water Gun', 'Scratch', 'Tail Whip', 'Hydro Pump'], evolvesTo: 'Blastoise', evolvesAt: 36 }, 
-            'Blastoise': { id: 9, type: ['Water'], hp: 79, atk: 83, def: 100, moves: ['Hydro Pump', 'Scratch', 'Water Gun', 'Tail Whip'] }, 
-            'Pikachu': { id: 25, type: ['Electric'], hp: 35, atk: 55, def: 40, moves: ['Tackle', 'Thunder Shock', 'Thunderbolt', 'Tail Whip'], evolvesTo: 'Raichu', evolvesAt: 22 }, 
-            'Raichu': { id: 26, type: ['Electric'], hp: 60, atk: 90, def: 55, moves: ['Tackle', 'Thunderbolt', 'Quick Attack', 'Tail Whip'] }, 
-            'Gengar': { id: 94, type: ['Ghost'], hp: 60, atk: 130, def: 60, moves: ['Shadow Ball', 'Tackle'] }, 
-            'Onix': { id: 95, type: ['Rock'], hp: 35, atk: 45, def: 160, moves: ['Rock Throw', 'Tackle'] }, 
-            'Articuno': { id: 144, type: ['Ice'], hp: 90, atk: 85, def: 100, moves: ['Ice Beam', 'Drill Peck'], isLegend: true }, 
-            'Zapdos': { id: 145, type: ['Electric'], hp: 90, atk: 90, def: 85, moves: ['Thunderbolt', 'Drill Peck'], isLegend: true }, 
-            'Moltres': { id: 146, type: ['Fire'], hp: 90, atk: 100, def: 90, moves: ['Flamethrower', 'Drill Peck'], isLegend: true }, 
-            'Mewtwo': { id: 150, type: ['Psychic'], hp: 106, atk: 110, def: 90, moves: ['Psychic', 'Hyper Beam'], isLegend: true }
+            'Bulbasaur': { id: 1, type: ['Grass'], hp: 45, atk: 49, def: 49, moves: ['Tackle', 'Vine Whip', 'Growl'], evolvesTo: 'Ivysaur', evolvesAt: 16 }, 
+            'Ivysaur': { id: 2, type: ['Grass'], hp: 60, atk: 62, def: 63, moves: ['Tackle', 'Razor Leaf', 'Growl'], evolvesTo: 'Venusaur', evolvesAt: 32 }, 
+            'Venusaur': { id: 3, type: ['Grass'], hp: 80, atk: 82, def: 83, moves: ['Razor Leaf', 'Tackle', 'Growl', 'Hyper Beam'] }, 
+            'Charmander': { id: 4, type: ['Fire'], hp: 39, atk: 52, def: 43, moves: ['Scratch', 'Ember', 'Growl'], evolvesTo: 'Charmeleon', evolvesAt: 16 }, 
+            'Charmeleon': { id: 5, type: ['Fire'], hp: 58, atk: 64, def: 58, moves: ['Flamethrower', 'Scratch', 'Ember'], evolvesTo: 'Charizard', evolvesAt: 36 }, 
+            'Charizard': { id: 6, type: ['Fire', 'Flying'], hp: 78, atk: 84, def: 78, moves: ['Flamethrower', 'Scratch', 'Dragon Rage'] }, 
+            'Squirtle': { id: 7, type: ['Water'], hp: 44, atk: 48, def: 65, moves: ['Tackle', 'Water Gun', 'Bite'], evolvesTo: 'Wartortle', evolvesAt: 16 }, 
+            'Wartortle': { id: 8, type: ['Water'], hp: 59, atk: 63, def: 80, moves: ['Water Gun', 'Bite', 'Hydro Pump'], evolvesTo: 'Blastoise', evolvesAt: 36 }, 
+            'Blastoise': { id: 9, type: ['Water'], hp: 79, atk: 83, def: 100, moves: ['Hydro Pump', 'Bite', 'Water Gun'] }, 
+            'Pikachu': { id: 25, type: ['Electric'], hp: 35, atk: 55, def: 40, moves: ['Quick Attack', 'Thunder Shock', 'Thunderbolt'], evolvesTo: 'Raichu', evolvesAt: 22 }, 
+            'Raichu': { id: 26, type: ['Electric'], hp: 60, atk: 90, def: 55, moves: ['Thunderbolt', 'Quick Attack', 'Bite'] }, 
+            'Jigglypuff': { id: 39, type: ['Normal'], hp: 115, atk: 45, def: 20, moves: ['Sing', 'Bite', 'Scratch'], evolvesTo: 'Wigglytuff', evolvesAt: 25 },
+            'Wigglytuff': { id: 40, type: ['Normal'], hp: 140, atk: 70, def: 45, moves: ['Sing', 'Hyper Beam', 'Bite'] },
+            'Meowth': { id: 52, type: ['Normal'], hp: 40, atk: 45, def: 35, moves: ['Scratch', 'Bite', 'Growl'], evolvesTo: 'Persian', evolvesAt: 28 },
+            'Persian': { id: 53, type: ['Normal'], hp: 65, atk: 70, def: 60, moves: ['Scratch', 'Bite', 'Hyper Beam'] },
+            'Psyduck': { id: 54, type: ['Water'], hp: 50, atk: 52, def: 48, moves: ['Scratch', 'Confusion', 'Water Gun'] },
+            'Machop': { id: 66, type: ['Fighting'], hp: 70, atk: 80, def: 50, moves: ['Karate Chop', 'Tackle'], evolvesTo: 'Machoke', evolvesAt: 28 },
+            'Machoke': { id: 67, type: ['Fighting'], hp: 80, atk: 100, def: 70, moves: ['Karate Chop', 'Rock Slide'] },
+            'Geodude': { id: 74, type: ['Rock', 'Ground'], hp: 40, atk: 80, def: 100, moves: ['Tackle', 'Rock Slide'], evolvesTo: 'Graveler', evolvesAt: 25 },
+            'Graveler': { id: 75, type: ['Rock', 'Ground'], hp: 55, atk: 95, def: 115, moves: ['Rock Slide', 'Tackle', 'Karate Chop'] },
+            'Gengar': { id: 94, type: ['Ghost'], hp: 60, atk: 130, def: 60, moves: ['Shadow Ball', 'Confusion'] }, 
+            'Eevee': { id: 133, type: ['Normal'], hp: 55, atk: 55, def: 50, moves: ['Tackle', 'Quick Attack', 'Bite'] },
+            'Snorlax': { id: 143, type: ['Normal'], hp: 160, atk: 110, def: 65, moves: ['Hyper Beam', 'Bite', 'Rest'] },
+            'Dragonite': { id: 149, type: ['Dragon', 'Flying'], hp: 91, atk: 134, def: 95, moves: ['Dragon Rage', 'Hyper Beam', 'Thunderbolt', 'Ice Beam'], isLegend: true },
+            'Mewtwo': { id: 150, type: ['Psychic'], hp: 106, atk: 110, def: 90, moves: ['Psychic', 'Hyper Beam', 'Confusion'], isLegend: true }
         };
 
         const AUDIO = {
             synth: null,
-            init: () => { if(!AUDIO.synth) { Tone.start(); AUDIO.synth = new Tone.PolySynth(Tone.Synth).toDestination(); AUDIO.synth.volume.value = -12; } },
+            init: () => { if(!AUDIO.synth) { Tone.start(); AUDIO.synth = new Tone.PolySynth(Tone.Synth).toDestination(); AUDIO.synth.volume.value = -10; } },
             sfx: { 
                 hit: () => AUDIO.play(['C2'], '32n'), 
-                super: () => AUDIO.play(['G4', 'C5', 'E5'], '16n'), 
                 menu: () => AUDIO.play('G5', '32n'), 
                 win: () => AUDIO.play(['C5','E5','G5','C6'], '4n'), 
                 catch: () => AUDIO.play(['C5', 'G4', 'E4'], '16n'), 
                 heal: () => AUDIO.play(['E5', 'G5', 'C5'], '16n'), 
                 status: () => AUDIO.play(['A3', 'C4', 'E4'], '8n'),
                 evo: () => AUDIO.play(['C3','E3','G3','C4','E4','G4','C5'], '8n'),
-                boom: () => AUDIO.play(['C2', 'G1'], '8n')
+                // TYPE SOUNDS
+                fire: () => AUDIO.play(['F2','A2','C3'], '16n'),
+                water: () => AUDIO.play(['D4','F4','A4'], '8n'),
+                electric: () => AUDIO.play(['E5','G5','B5','E6'], '32n'),
+                psychic: () => AUDIO.play(['C6','B5','A5'], '8n'),
+                heavy: () => AUDIO.play(['G1','G2'], '8n'),
             },
+            play: (n, d) => AUDIO.synth && AUDIO.synth.triggerAttackRelease(n, d)
+        };
+            
+
             play: (n, d) => AUDIO.synth && AUDIO.synth.triggerAttackRelease(n, d)
         };
 
