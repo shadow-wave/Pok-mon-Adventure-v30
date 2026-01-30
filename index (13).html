@@ -1,0 +1,1440 @@
+<html lang="en"><head><script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.2kN9-TZiXrM.O/m=gapi_iframes/rt=j/sv=1/d=1/ed=1/rs=AHpOoo_B4hu0FeWRuWHfxnZ3V0WubwN7Qw/cb=gapi.loaded_0?le=scs" async=""></script><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImIxZjQyNzYzZjkzNGExOTQwMWNkOTFhNjdjY2FhNzdiNjIwNWU2N2EiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwNzUwMTE3OTcwMjAzMTEzNzcxMyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzI3NTlkNjdmYWI3ODA2YjJfaW5kZXguaHRtbC03MzMifSwiZXhwIjoxNzY5Nzc2MzI2LCJpYXQiOjE3Njk3NzI3MjYsImFsZyI6IlJTMjU2In0.q-hfcuG5YjAURPfmO_4D0KQjjWErq9yNMehab5b1oQekiw2mM_lDup6C-LWMLyl1o6_y_MbqMr06xYZOBx4PnuV7tTKmchMZpCtUESLUIjBB-4RaY1vxYS0yRapZ2rOHLfaMmDy2Iaev50GZ_wgga1SbbIa5SEM7CzwPhDMAKL7HnUPCr_DOKRlJk-_k1n7mUwKhYtb7XPHXzIAoFtC_TuAfx1VV0wYaVNW7JtKcci7Egnq1oXPUEkmwFvH51E3XMobG5lZY8P5E7F70RS0t59KFlPV-Ynr4s7cyzE21__fjDtvNnmwic6Q7vkIDN2zUgujBdupSUIpHIbKsWRYouQ","c_2759d67fab7806b2_index.html-733")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pokémon Adventure v31.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Press Start 2P', cursive; background: #0f172a; color: #f8fafc; user-select: none; overflow: hidden; touch-action: none; }
+        .pixel-corners { image-rendering: pixelated; }
+        
+        /* --- BATTLEGROUND --- */
+        .battle-view { 
+            position: relative; 
+            flex: 1; 
+            overflow: hidden; 
+            background: linear-gradient(180deg, #60A5FA 0%, #93C5FD 50%, #BFDBFE 100%);
+            animation: sky-cycle 60s infinite alternate;
+        }
+        @keyframes sky-cycle { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(30deg); } }
+
+        /* Sun & Clouds */
+        .sun {
+            position: absolute; top: 10%; right: 10%;
+            width: 60px; height: 60px;
+            background: radial-gradient(circle, #FEF08A 40%, #FDE047 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(253, 224, 71, 0.8);
+            animation: sun-pulse 4s ease-in-out infinite alternate;
+        }
+        @keyframes sun-pulse { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(1.1); opacity: 1; } }
+
+        .clouds-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        .cloud {
+            position: absolute; background: rgba(255,255,255,0.7); border-radius: 50px;
+            animation: cloud-drift linear infinite;
+        }
+        .cloud::after, .cloud::before { content: ''; position: absolute; background: inherit; border-radius: 50%; }
+        .c1 { width: 120px; height: 40px; top: 15%; left: -20%; animation-duration: 45s; }
+        .c1::after { width: 60px; height: 60px; top: -30px; left: 20px; }
+        .c2 { width: 80px; height: 30px; top: 25%; left: -10%; animation-duration: 35s; opacity: 0.6; animation-delay: -15s; }
+        @keyframes cloud-drift { from { transform: translateX(-150px); } to { transform: translateX(120vw); } }
+
+        /* Landscape */
+        .landscape { position: absolute; bottom: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .mountains {
+            position: absolute; bottom: 30%; width: 100%; height: 40%;
+            background: #475569; 
+            clip-path: polygon(0% 100%, 15% 40%, 35% 80%, 50% 20%, 75% 60%, 100% 30%, 100% 100%);
+            opacity: 0.7;
+        }
+        .hill-back { position: absolute; bottom: 0; left: -20%; width: 140%; height: 35%; background: #166534; border-radius: 100% 100% 0 0 / 30%; z-index: 1; }
+        .hill-front { position: absolute; bottom: -10%; right: -20%; width: 140%; height: 35%; background: #22c55e; border-radius: 100% 100% 0 0 / 40%; z-index: 2; }
+
+        /* Battle Pads */
+        .battle-pad {
+            position: absolute;
+            background: radial-gradient(ellipse at center, #dcfce7 0%, #86efac 60%, rgba(21, 128, 61, 0.4) 100%);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scaleY(0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 3;
+        }
+        .pad-p { width: 240px; height: 120px; bottom: 8%; left: 8%; }
+        .pad-e { width: 180px; height: 90px; top: 38%; right: 10%; }
+
+        /* UI */
+        .info-box { background: #1e293b; border: 3px solid #fbbf24; border-radius: 12px; padding: 10px; color: white; box-shadow: 6px 6px 0 rgba(0,0,0,0.4); z-index: 30; }
+        
+        .game-frame { 
+            background: #1e293b; 
+            border: 4px solid #334155; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+            overflow: hidden; 
+            width: 100%; 
+            height: 100%; 
+            max-width: 56rem; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* Mobile Optimization overrides */
+        @media (max-width: 768px) {
+            body { padding: 0 !important; }
+            #main-content { height: 100dvh !important; max-width: 100% !important; border-radius: 0 !important; }
+            .game-frame { border: none !important; border-radius: 0 !important; max-width: 100% !important; }
+            .info-box { transform: scale(0.9); transform-origin: top left; }
+            .info-box:last-of-type { transform-origin: bottom right; }
+        }
+        
+        /* --- ANIMATIONS --- */
+        .anim-float { animation: float 3s ease-in-out infinite; } @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .anim-lunge-right { animation: lunge-right 0.3s cubic-bezier(0.1, 0.7, 1.0, 0.1); } 
+        @keyframes lunge-right { 0% { transform: translateX(0); } 50% { transform: translateX(100px) scale(1.2); } 100% { transform: translateX(0); } }
+        
+        .anim-lunge-left { animation: lunge-left 0.3s cubic-bezier(0.1, 0.7, 1.0, 0.1); } 
+        @keyframes lunge-left { 0% { transform: translateX(0); } 50% { transform: translateX(-100px) scale(1.2); } 100% { transform: translateX(0); } }
+        
+        .anim-hit { animation: hit-flash 0.4s; } 
+        @keyframes hit-flash { 0%, 100% { filter: brightness(1); opacity: 1; transform: translateX(0); } 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { filter: brightness(10) sepia(1) hue-rotate(-50deg); opacity: 0.8; } }
+
+        .anim-shake { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake { 10%, 90% { transform: translate3d(-4px, 1px, 0); } 20%, 80% { transform: translate3d(4px, -2px, 0); } 30%, 50%, 70% { transform: translate3d(-6px, 2px, 0); } 40%, 60% { transform: translate3d(6px, -3px, 0); } }
+
+        .anim-throw { animation: throw 0.8s forwards; } @keyframes throw { 0% { transform: translate(-200px, 300px) rotate(0deg); opacity: 1; } 100% { transform: translate(300px, -120px) rotate(720deg); opacity: 1; } }
+        .anim-wiggle { animation: wiggle 1s ease-in-out infinite; transform-origin: bottom center; } @keyframes wiggle { 0%, 100% { transform: translate(300px, -120px) rotate(0deg); } 25% { transform: translate(300px, -120px) rotate(-20deg); } 75% { transform: translate(300px, -120px) rotate(20deg); } }
+        .modal-bounce { animation: bounce-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); } @keyframes bounce-in { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+        /* VFX Particles */
+        .vfx-particle { position: absolute; pointer-events: none; z-index: 100; transform-origin: center; will-change: transform, opacity; }
+
+        /* Status Badges */
+        .status-badge { font-size: 8px; padding: 2px 4px; border-radius: 4px; font-weight: bold; margin-left: 4px; vertical-align: middle; }
+        .status-brn { background: #F08030; color: white; }
+        .status-par { background: #F8D030; color: #000; }
+        .status-psn { background: #A040A0; color: white; }
+
+        /* Buttons */
+        .type-btn { border-bottom-width: 4px; border-radius: 8px; font-weight: bold; transition: transform 0.1s; }
+        .type-btn:active { transform: translateY(2px); border-bottom-width: 0px; }
+        
+        .type-normal { background: #A8A878; color: #fff; border-color: #6d6d4e; }
+        .type-fire { background: #F08030; color: white; border-color: #9c531f; }
+        .type-water { background: #6890F0; color: white; border-color: #445e9e; }
+        .type-grass { background: #78C850; color: white; border-color: #4e8234; }
+        .type-electric { background: #F8D030; color: #444; border-color: #a1871f; }
+        .type-ice { background: #98D8D8; color: #444; border-color: #638d8d; }
+        .type-fighting { background: #C03028; color: white; border-color: #7d1f1a; }
+        .type-poison { background: #A040A0; color: white; border-color: #682a68; }
+        .type-ground { background: #E0C068; color: #444; border-color: #927d44; }
+        .type-flying { background: #A890F0; color: white; border-color: #6d5e9c; }
+        .type-psychic { background: #F85888; color: white; border-color: #a13959; }
+        .type-bug { background: #A8B820; color: white; border-color: #6d7815; }
+        .type-rock { background: #B8A038; color: white; border-color: #786824; }
+        .type-ghost { background: #705898; color: white; border-color: #493963; }
+        .type-dragon { background: #7038F8; color: white; border-color: #4924a1; }
+        .type-catch { background: #ef4444; color: white; border-color: #991b1b; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.inset-0{inset:0px}.z-50{z-index:50}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.hidden{display:none}.h-\[100dvh\]{height:100dvh}.h-16{height:4rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-16{width:4rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border-2{border-width:2px}.border-b-4{border-bottom-width:4px}.border-blue-800{--tw-border-opacity:1;border-color:rgb(30 64 175 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-gray-600{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-opacity-90{--tw-bg-opacity:0.9}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.tracking-widest{letter-spacing:0.1em}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.outline-none{outline:2px solid transparent;outline-offset:2px}.hover\:brightness-110:hover{--tw-brightness:brightness(1.1);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.active\:translate-y-1:active{--tw-translate-y:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 768px){.md\:h-\[680px\]{height:680px}.md\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}}</style><script src="https://apis.google.com/js/api.js?onload=__iframefcb952818" type="text/javascript" charset="UTF-8" gapi_processed="true"></script></head>
+<body class="flex items-center justify-center min-h-screen p-2 md:bg-gray-900 bg-black">
+
+    <div id="modal-layer" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"></div>
+    <!-- Main content container now uses dvh for mobile and fallback for desktop -->
+    <div id="main-content" class="w-full h-[100dvh] md:h-[680px]">
+                <div class="game-frame flex flex-col items-center justify-center p-8">
+                    <h1 class="text-4xl text-yellow-400 font-bold mb-2 text-center" style="text-shadow: 4px 4px 0 #000">POKÉMON</h1>
+                    <h2 class="text-xs text-slate-400 mb-8 uppercase tracking-widest">v31.0: Ultra FX</h2>
+                    <div id="online-status" class="mb-4 text-[10px] font-mono">CHECKING...</div>
+                    <div class="flex gap-4 mb-8"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif" class="w-16 h-16 anim-float"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif" class="w-16 h-16 anim-float" style="animation-delay:0.5s"></div>
+                    
+                    <input type="text" id="p-name" class="bg-slate-700 text-white p-4 rounded-lg mb-4 text-center border-2 border-slate-500 outline-none uppercase w-full max-w-xs" placeholder="TRAINER NAME" maxlength="10">
+                    <button onclick="startNewGame()" class="bg-blue-600 text-white px-6 py-4 rounded-xl border-b-4 border-blue-800 font-bold hover:brightness-110 active:translate-y-1 w-full max-w-xs">START JOURNEY</button>
+                    <div class="flex gap-2 w-full max-w-xs mt-6">
+                        <button onclick="downloadGame()" class="bg-gray-600 text-white flex-1 py-2 rounded border-b-4 border-gray-800 font-bold hover:brightness-110 active:translate-y-1 text-[10px]">DOWNLOAD</button>
+                        
+                    </div>
+                </div></div>
+
+        <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js';
+        import { getAuth, signInAnonymously } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js';
+        import { getFirestore, doc, setDoc, getDoc, onSnapshot, runTransaction } from 'https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js';
+
+        // 🟢 RESTORED YOUR KEYS HERE 🟢
+        const firebaseConfig = {
+          apiKey: "AIzaSyCKmkalPeggoq0y5OUUzFlyVoVJnKCGqvU",
+          authDomain: "pokemon-pvp-12f30.firebaseapp.com",
+          projectId: "pokemon-pvp-12f30",
+          storageBucket: "pokemon-pvp-12f30.firebasestorage.app",
+          messagingSenderId: "947032047271",
+          appId: "1:947032047271:web:22c7966896f0cd36c2e582"
+        };
+        // ---------------------------------------------------
+
+        window.initFirebase = async () => {
+            try {
+                const app = initializeApp(firebaseConfig);
+                const auth = getAuth(app);
+                const db = getFirestore(app);
+                
+                await signInAnonymously(auth);
+                
+                window.GAME_USER = auth.currentUser; 
+                window.GAME_DB = db; 
+                window.APP_ID = "poke-v31-ultra"; // Updated ID for new version
+                window.IS_ONLINE = true;
+                
+                window.db_doc = doc; 
+                window.db_setDoc = setDoc; 
+                window.db_getDoc = getDoc; 
+                window.db_onSnapshot = onSnapshot; 
+                window.db_runTransaction = runTransaction;
+
+                updateOnlineStatus(true);
+                console.log("✅ Firebase Connected Successfully!");
+            } catch (e) { 
+                console.error("Connection failed:", e);
+                window.IS_ONLINE = false; 
+                updateOnlineStatus(false);
+            }
+        };
+
+        const updateOnlineStatus = (online) => {
+             const el = document.getElementById('online-status');
+             if(el) { 
+                 el.innerText = online ? "🟢 ONLINE" : "🔴 OFFLINE"; 
+                 el.className = online ? "mb-4 text-[10px] text-green-400 font-mono" : "mb-4 text-[10px] text-red-400 font-mono"; 
+             }
+        };
+        
+        window.initFirebase();
+        </script>
+        
+        
+    <script>
+        // --- DATA & CONFIG ---
+        const TYPES = { Normal: { Rock: 0.5, Ghost: 0 }, Fire: { Grass: 2, Ice: 2, Bug: 2, Steel: 2, Water: 0.5 }, Water: { Fire: 2, Ground: 2, Rock: 2, Grass: 0.5 }, Electric: { Water: 2, Flying: 2, Ground: 0 }, Grass: { Water: 2, Ground: 2, Rock: 2, Fire: 0.5 }, Ice: { Grass: 2, Ground: 2, Dragon: 2, Fire: 0.5 }, Fighting: { Normal: 2, Rock: 2, Steel: 2, Ice: 2 }, Poison: { Grass: 2 }, Ground: { Fire: 2, Electric: 2, Rock: 2 }, Flying: { Fighting: 2, Bug: 2, Grass: 2 }, Psychic: { Fighting: 2, Poison: 2 }, Bug: { Grass: 2, Psychic: 2 }, Rock: { Fire: 2, Ice: 2, Flying: 2, Bug: 2 }, Ghost: { Psychic: 2, Ghost: 2 }, Dragon: { Dragon: 2 } };
+        
+        const MOVES = {
+            'Tackle': { power: 40, type: 'Normal', category: 'Physical' }, 
+            'Scratch': { power: 40, type: 'Normal', category: 'Physical' },
+            'Growl': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', stat: 'atk', stages: -1 } },
+            'Tail Whip': { power: 0, type: 'Normal', category: 'Status', effect: { target: 'opponent', stat: 'def', stages: -1 } },
+            'Vine Whip': { power: 45, type: 'Grass', category: 'Physical' }, 
+            'Razor Leaf': { power: 55, type: 'Grass', category: 'Physical' },
+            'Poison Powder': { power: 0, type: 'Poison', category: 'Status', effect: { target: 'opponent', status: 'psn', chance: 1.0 } },
+            'Ember': { power: 40, type: 'Fire', category: 'Special', effect: { target: 'opponent', status: 'brn', chance: 0.2 } }, 
+            'Flamethrower': { power: 90, type: 'Fire', category: 'Special', effect: { target: 'opponent', status: 'brn', chance: 0.1 } },
+            'Water Gun': { power: 40, type: 'Water', category: 'Special' }, 
+            'Hydro Pump': { power: 110, type: 'Water', category: 'Special' },
+            'Thunder Shock': { power: 40, type: 'Electric', category: 'Special', effect: { target: 'opponent', status: 'par', chance: 0.3 } }, 
+            'Thunderbolt': { power: 90, type: 'Electric', category: 'Special', effect: { target: 'opponent', status: 'par', chance: 0.1 } },
+            'Shadow Ball': { power: 80, type: 'Ghost', category: 'Special' }, 
+            'Rock Throw': { power: 50, type: 'Rock', category: 'Physical' },
+            'Ice Beam': { power: 90, type: 'Ice', category: 'Special', effect: { target: 'opponent', status: 'frz', chance: 0.1 } }, 
+            'Psychic': { power: 90, type: 'Psychic', category: 'Special' },
+            'Hyper Beam': { power: 150, type: 'Normal', category: 'Special' }, 
+            'Drill Peck': { power: 80, type: 'Flying', category: 'Physical' },
+            'Quick Attack': { power: 40, type: 'Normal', category: 'Physical' }
+        };
+
+        const POKEMON = {
+            'Bulbasaur': { id: 1, type: ['Grass'], hp: 45, atk: 49, def: 49, moves: ['Tackle', 'Vine Whip', 'Growl', 'Poison Powder'], evolvesTo: 'Ivysaur', evolvesAt: 16 }, 
+            'Ivysaur': { id: 2, type: ['Grass'], hp: 60, atk: 62, def: 63, moves: ['Tackle', 'Razor Leaf', 'Growl', 'Poison Powder'], evolvesTo: 'Venusaur', evolvesAt: 32 }, 
+            'Venusaur': { id: 3, type: ['Grass'], hp: 80, atk: 82, def: 83, moves: ['Razor Leaf', 'Tackle', 'Growl', 'Poison Powder'] }, 
+            'Charmander': { id: 4, type: ['Fire'], hp: 39, atk: 52, def: 43, moves: ['Scratch', 'Ember', 'Growl', 'Flamethrower'], evolvesTo: 'Charmeleon', evolvesAt: 16 }, 
+            'Charmeleon': { id: 5, type: ['Fire'], hp: 58, atk: 64, def: 58, moves: ['Flamethrower', 'Scratch', 'Growl', 'Ember'], evolvesTo: 'Charizard', evolvesAt: 36 }, 
+            'Charizard': { id: 6, type: ['Fire', 'Flying'], hp: 78, atk: 84, def: 78, moves: ['Flamethrower', 'Scratch', 'Drill Peck', 'Growl'] }, 
+            'Squirtle': { id: 7, type: ['Water'], hp: 44, atk: 48, def: 65, moves: ['Tackle', 'Water Gun', 'Tail Whip', 'Hydro Pump'], evolvesTo: 'Wartortle', evolvesAt: 16 }, 
+            'Wartortle': { id: 8, type: ['Water'], hp: 59, atk: 63, def: 80, moves: ['Water Gun', 'Scratch', 'Tail Whip', 'Hydro Pump'], evolvesTo: 'Blastoise', evolvesAt: 36 }, 
+            'Blastoise': { id: 9, type: ['Water'], hp: 79, atk: 83, def: 100, moves: ['Hydro Pump', 'Scratch', 'Water Gun', 'Tail Whip'] }, 
+            'Pikachu': { id: 25, type: ['Electric'], hp: 35, atk: 55, def: 40, moves: ['Tackle', 'Thunder Shock', 'Thunderbolt', 'Tail Whip'], evolvesTo: 'Raichu', evolvesAt: 22 }, 
+            'Raichu': { id: 26, type: ['Electric'], hp: 60, atk: 90, def: 55, moves: ['Tackle', 'Thunderbolt', 'Quick Attack', 'Tail Whip'] }, 
+            'Gengar': { id: 94, type: ['Ghost'], hp: 60, atk: 130, def: 60, moves: ['Shadow Ball', 'Tackle'] }, 
+            'Onix': { id: 95, type: ['Rock'], hp: 35, atk: 45, def: 160, moves: ['Rock Throw', 'Tackle'] }, 
+            'Articuno': { id: 144, type: ['Ice'], hp: 90, atk: 85, def: 100, moves: ['Ice Beam', 'Drill Peck'], isLegend: true }, 
+            'Zapdos': { id: 145, type: ['Electric'], hp: 90, atk: 90, def: 85, moves: ['Thunderbolt', 'Drill Peck'], isLegend: true }, 
+            'Moltres': { id: 146, type: ['Fire'], hp: 90, atk: 100, def: 90, moves: ['Flamethrower', 'Drill Peck'], isLegend: true }, 
+            'Mewtwo': { id: 150, type: ['Psychic'], hp: 106, atk: 110, def: 90, moves: ['Psychic', 'Hyper Beam'], isLegend: true }
+        };
+
+        const AUDIO = {
+            synth: null,
+            init: () => { if(!AUDIO.synth) { Tone.start(); AUDIO.synth = new Tone.PolySynth(Tone.Synth).toDestination(); AUDIO.synth.volume.value = -12; } },
+            sfx: { 
+                hit: () => AUDIO.play(['C2'], '32n'), 
+                super: () => AUDIO.play(['G4', 'C5', 'E5'], '16n'), 
+                menu: () => AUDIO.play('G5', '32n'), 
+                win: () => AUDIO.play(['C5','E5','G5','C6'], '4n'), 
+                catch: () => AUDIO.play(['C5', 'G4', 'E4'], '16n'), 
+                heal: () => AUDIO.play(['E5', 'G5', 'C5'], '16n'), 
+                status: () => AUDIO.play(['A3', 'C4', 'E4'], '8n'),
+                evo: () => AUDIO.play(['C3','E3','G3','C4','E4','G4','C5'], '8n'),
+                boom: () => AUDIO.play(['C2', 'G1'], '8n')
+            },
+            play: (n, d) => AUDIO.synth && AUDIO.synth.triggerAttackRelease(n, d)
+        };
+
+        let state = { player: { name: 'Player', wins: 0 }, team: [], box: [], bag: { potions: 5, balls: 10 }, battleParty: [] };
+        let battle = null;
+        let mpUnsub = null;
+        let mpBattleId = null;
+        let mpRole = null;
+        let partyMode = 'single';
+        const SAVE_KEY = 'poke_adventure_v31';
+
+        const createMon = (name, lvl=5) => {
+            const p = POKEMON[name];
+            const hp = Math.floor((2 * p.hp * lvl) / 100) + lvl + 10;
+            return { 
+                uuid: crypto.randomUUID(), name, protoId: p.id, types: p.type, lvl, 
+                maxHp: hp, hp: hp, 
+                atk: Math.floor((2*p.atk*lvl)/100)+5, 
+                def: Math.floor((2*p.def*lvl)/100)+5, 
+                moves: p.moves, 
+                xp: 0, nextXp: Math.floor(1.2 * (lvl ** 3)),
+                status: null, // psn, brn, par
+                stages: { atk: 0, def: 0 } // -6 to 6
+            };
+        };
+
+        const getSprite = (id, back=false) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${back ? 'back/' : ''}${id}.gif`;
+        const wait = (ms) => new Promise(r => setTimeout(r, ms));
+        const saveData = () => localStorage.setItem(SAVE_KEY, JSON.stringify(state));
+        
+        const downloadGame = () => {
+            const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'pokemon-adventure-v31.html'; a.click();
+        };
+
+        const ui = document.getElementById('main-content');
+        const modal = document.getElementById('modal-layer');
+        const showModal = (html, idMap = {}) => {
+            modal.innerHTML = `<div class="bg-slate-800 text-white p-6 rounded-xl border-4 border-slate-600 shadow-2xl w-full max-w-md modal-bounce text-center z-50">${html}</div>`;
+            modal.classList.remove('hidden');
+            Object.keys(idMap).forEach(id => { const el = document.getElementById(id); if(el) el.onclick = () => { AUDIO.sfx.menu(); idMap[id](); } });
+        };
+        const hideModal = () => modal.classList.add('hidden');
+
+        // --- ULTRA VFX SYSTEM ---
+        const spawnVFX = async (type, attacker, defender) => {
+            const layer = document.getElementById('vfx-layer');
+            const viewRect = document.querySelector('.battle-view').getBoundingClientRect();
+            const rectA = attacker.getBoundingClientRect();
+            const rectD = defender.getBoundingClientRect();
+            
+            // Calculate coordinates relative to the battle-view container
+            const startX = rectA.left - viewRect.left + rectA.width/2;
+            const startY = rectA.top - viewRect.top + rectA.height/2;
+            const endX = rectD.left - viewRect.left + rectD.width/2;
+            const endY = rectD.top - viewRect.top + rectD.height/2;
+
+            const createPart = (cls, color, size, duration, delay=0, endScale=0) => {
+                const p = document.createElement('div');
+                p.className = `vfx-particle ${cls}`;
+                p.style.backgroundColor = color;
+                p.style.width = size+'px'; p.style.height = size+'px';
+                p.style.left = startX+'px'; p.style.top = startY+'px';
+                layer.appendChild(p);
+                
+                const spreadX = (Math.random()-0.5) * 80;
+                const spreadY = (Math.random()-0.5) * 80;
+                
+                p.animate([
+                    { transform: `translate(-50%, -50%) scale(0.5)`, opacity: 1 },
+                    { transform: `translate(calc(${endX - startX + spreadX}px - 50%), calc(${endY - startY + spreadY}px - 50%)) scale(${endScale})`, opacity: 0 }
+                ], { duration: duration, delay: delay, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }).onfinish = () => p.remove();
+            };
+
+            // Enhanced Move Type Logic
+            if(type === 'Fire') {
+                // Stream of fire particles
+                for(let i=0; i<25; i++) {
+                    createPart('rounded-full shadow-[0_0_10px_#ef4444]', '#ef4444', 14+Math.random()*10, 600, i*20, 2);
+                    if(i%2==0) createPart('rounded-full', '#fef08a', 8+Math.random()*5, 500, i*20 + 50, 0);
+                }
+            } 
+            else if(type === 'Water') {
+                // Bubble stream
+                for(let i=0; i<30; i++) {
+                    createPart('rounded-full border-2 border-blue-200 bg-blue-500 opacity-60', 'transparent', 10+Math.random()*12, 700, i*15, 1.5);
+                }
+            }
+            else if(type === 'Grass') {
+                 // Flying leaves (green squares rotated)
+                 for(let i=0; i<20; i++) {
+                     createPart('rotate-45', '#22c55e', 12, 800, i*30, 1);
+                 }
+            }
+            else if(type === 'Electric') {
+                // Flash screen
+                const flash = document.createElement('div');
+                flash.className = 'absolute inset-0 bg-yellow-200 z-[40] pointer-events-none mix-blend-overlay';
+                layer.appendChild(flash);
+                flash.animate([{opacity: 0}, {opacity: 0.8}, {opacity: 0}], {duration: 150}).onfinish = () => flash.remove();
+                
+                // Sparks
+                for(let i=0; i<20; i++) createPart('skew-x-12 shadow-[0_0_8px_#facc15]', '#facc15', 6, 300, Math.random()*200, 0);
+            }
+            else if(type === 'Ice') {
+                for(let i=0; i<20; i++) createPart('rotate-45 opacity-80', '#bae6fd', 10, 600, i*30, 0);
+            }
+            else if(type === 'Psychic' || type === 'Ghost') {
+                 for(let i=0; i<15; i++) createPart('rounded-full blur-[2px]', '#a855f7', 20, 900, i*40, 3);
+            }
+            else {
+                // Normal star burst
+                for(let i=0; i<10; i++) createPart('clip-path-[polygon(50%_0%,_61%_35%,_98%_35%,_68%_57%,_79%_91%,_50%_70%,_21%_91%,_32%_57%,_2%_35%,_39%_35%)] bg-slate-200', '#f8fafc', 20, 400, i*30, 0.5);
+            }
+            
+            await wait(600); 
+        };
+
+        // --- SCREENS ---
+        const renderStart = () => {
+            const saved = localStorage.getItem(SAVE_KEY);
+            let content;
+            if (saved) {
+                const data = JSON.parse(saved);
+                content = `
+                    <div class="flex flex-col gap-4 w-full max-w-xs">
+                        <button onclick="continueGame()" class="bg-green-600 text-white px-6 py-4 rounded-xl border-b-4 border-green-800 font-bold hover:brightness-110 active:translate-y-1 w-full text-lg uppercase">CONTINUE <span class="block text-xs font-normal opacity-80">${data.player.name}</span></button>
+                        <button onclick="confirmNewGame()" class="bg-blue-600 text-white px-6 py-3 rounded-xl border-b-4 border-blue-800 font-bold hover:brightness-110 active:translate-y-1 w-full">NEW GAME</button>
+                    </div>`;
+            } else {
+                content = `
+                    <input type="text" id="p-name" class="bg-slate-700 text-white p-4 rounded-lg mb-4 text-center border-2 border-slate-500 outline-none uppercase w-full max-w-xs" placeholder="TRAINER NAME" maxlength="10">
+                    <button onclick="startNewGame()" class="bg-blue-600 text-white px-6 py-4 rounded-xl border-b-4 border-blue-800 font-bold hover:brightness-110 active:translate-y-1 w-full max-w-xs">START JOURNEY</button>`;
+            }
+
+            ui.innerHTML = `
+                <div class="game-frame flex flex-col items-center justify-center p-8">
+                    <h1 class="text-4xl text-yellow-400 font-bold mb-2 text-center" style="text-shadow: 4px 4px 0 #000">POKÉMON</h1>
+                    <h2 class="text-xs text-slate-400 mb-8 uppercase tracking-widest">v31.0: Ultra FX</h2>
+                    <div id="online-status" class="mb-4 text-[10px] font-mono">CHECKING...</div>
+                    <div class="flex gap-4 mb-8"><img src="${getSprite(6)}" class="w-16 h-16 anim-float"><img src="${getSprite(150)}" class="w-16 h-16 anim-float" style="animation-delay:0.5s"></div>
+                    ${content}
+                    <div class="flex gap-2 w-full max-w-xs mt-6">
+                        <button onclick="downloadGame()" class="bg-gray-600 text-white flex-1 py-2 rounded border-b-4 border-gray-800 font-bold hover:brightness-110 active:translate-y-1 text-[10px]">DOWNLOAD</button>
+                        ${saved ? `<button onclick="resetData()" class="bg-red-900 text-white flex-1 py-2 rounded border-b-4 border-red-950 font-bold hover:brightness-110 active:translate-y-1 text-[10px]">DELETE SAVE</button>` : ''}
+                    </div>
+                </div>`;
+            
+            if(typeof window.IS_ONLINE !== 'undefined') updateOnlineStatus(window.IS_ONLINE);
+        };
+
+        window.continueGame = () => { AUDIO.init(); state = JSON.parse(localStorage.getItem(SAVE_KEY)); renderHub(); };
+        window.confirmNewGame = () => { if(confirm("Overwrite save?")) { localStorage.removeItem(SAVE_KEY); renderStart(); } };
+        window.startNewGame = () => { 
+            AUDIO.init(); 
+            const name = document.getElementById('p-name').value.trim().toUpperCase() || 'PLAYER'; 
+            state = { 
+                player: { name, wins: 0 }, 
+                team: [createMon('Pikachu', 5), createMon('Charmander', 5), createMon('Squirtle', 5)], 
+                box: [], 
+                bag: { potions: 5, balls: 10 }, 
+                battleParty: [] 
+            }; 
+            saveData(); 
+            renderHub(); 
+        };
+        window.downloadGame = downloadGame;
+        window.resetData = () => { if(confirm("Delete data?")) { localStorage.removeItem(SAVE_KEY); location.reload(); } };
+
+        const renderHub = () => {
+            if(mpUnsub) { mpUnsub(); mpUnsub = null; }
+            const teamHtml = state.team.slice(0,3).map(m => `<div class="bg-slate-700 p-2 rounded border border-slate-600 text-center"><img src="${getSprite(m.protoId)}" class="w-10 h-10 mx-auto"><p class="text-[8px] mt-1 truncate">${m.name}</p></div>`).join('');
+            ui.innerHTML = `
+                <div class="game-frame p-4">
+                    <div class="bg-slate-900 p-3 rounded-lg mb-4 border border-slate-700 flex justify-between text-white items-center shadow-inner"><div><p class="font-bold text-sm text-yellow-400">${state.player.name}</p><p class="text-[10px] text-slate-400">Wins: ${state.player.wins}</p></div><button onclick="healAll()" class="text-[10px] bg-pink-600 px-3 py-2 rounded border-b-2 border-pink-800 active:translate-y-px">Heal All</button></div>
+                    <div class="flex-1 flex flex-col justify-center gap-4 px-8"><button onclick="pickParty('single')" class="bg-red-500 text-white py-5 rounded-2xl border-b-4 border-red-700 font-bold text-lg hover:brightness-110">SINGLE PLAYER</button><button onclick="handleMultiClick()" class="bg-blue-600 text-white py-5 rounded-2xl border-b-4 border-blue-800 font-bold text-lg hover:brightness-110">ONLINE PvP</button><button onclick="pickParty('local_p1')" class="bg-green-600 text-white py-3 rounded-2xl border-b-4 border-green-800 font-bold hover:brightness-110">LOCAL PvP</button></div>
+                    <div class="mt-auto"><p class="text-slate-400 text-[10px] mb-2">CURRENT TEAM</p><div class="grid grid-cols-3 gap-2">${teamHtml}</div><p class="text-[8px] text-center mt-3 text-slate-500">BAG: 💊x${state.bag.potions} 🔴x${state.bag.balls}</p></div>
+                </div>`;
+        };
+
+        window.healAll = () => { 
+            state.team.concat(state.box).forEach(m => { 
+                m.hp = m.maxHp; 
+                m.status = null;
+                m.stages = {atk:0, def:0};
+            }); 
+            saveData(); AUDIO.sfx.heal(); renderHub(); 
+        };
+        
+        window.handleMultiClick = () => { 
+            if(!window.IS_ONLINE) showModal(`<h2>ERROR</h2><p>Offline Mode</p><button onclick="hideModal()" class="w-full mt-4 bg-slate-600 py-2 rounded">OK</button>`);
+            else pickParty('online'); 
+        };
+
+        window.pickParty = (mode) => {
+            partyMode = mode; state.battleParty = [];
+            const allMons = [...state.team, ...state.box];
+            const title = mode === 'local_p1' ? 'P1 PARTY' : (mode === 'local_p2' ? 'P2 PARTY' : 'SELECT TEAM');
+            const listHtml = allMons.map((m, i) => `
+                <div id="sel-${i}" onclick="toggleSelect(${i})" class="bg-slate-700 p-2 rounded-lg border-2 ${m.hp <= 0 ? 'border-red-900 opacity-60' : 'border-slate-600'} flex justify-between items-center cursor-pointer mb-2 hover:bg-slate-600"><img src="${getSprite(m.protoId)}" class="w-8 h-8"><div class="flex-1 ml-3 text-left"><p class="text-[10px] font-bold">${m.name}</p><p class="text-[8px] text-slate-400">Lv${m.lvl} - ${m.hp}/${m.maxHp}</p></div><div class="w-5 h-5 rounded-full border-2 border-slate-400 ind"></div></div>`).join('');
+            ui.innerHTML = `<div class="game-frame p-4"><h2 class="text-xl text-yellow-400 mb-4 text-center font-bold uppercase">${title}</h2><div class="flex-1 overflow-y-auto pr-1">${listHtml || '<p>Empty</p>'}</div><div class="mt-4 flex gap-2"><button onclick="renderHub()" class="bg-slate-600 text-white flex-1 py-4 rounded-xl">BACK</button><button id="btn-conf" onclick="confirmParty()" class="bg-green-600 text-white flex-1 py-4 rounded-xl opacity-50 pointer-events-none font-bold">CONFIRM</button></div></div>`;
+            window.tempMons = allMons;
+        };
+
+        window.toggleSelect = (idx) => {
+            const m = window.tempMons[idx]; const exists = state.battleParty.findIndex(x => x.uuid === m.uuid); const el = document.getElementById(`sel-${idx}`);
+            if(exists >= 0) { state.battleParty.splice(exists, 1); el.classList.remove('border-yellow-400'); el.querySelector('.ind').classList.remove('bg-yellow-400'); } 
+            else { if(state.battleParty.length >= 3) return; state.battleParty.push(m); el.classList.add('border-yellow-400'); el.querySelector('.ind').classList.add('bg-yellow-400'); }
+            const btn = document.getElementById('btn-conf'); btn.innerText = `CONFIRM (${state.battleParty.length}/3)`;
+            if(state.battleParty.length > 0) btn.classList.remove('opacity-50', 'pointer-events-none'); else btn.classList.add('opacity-50', 'pointer-events-none');
+        };
+
+        window.confirmParty = () => {
+            if(!state.battleParty.some(m => m.hp > 0)) return alert("You need a healthy Pokémon!");
+            if(partyMode === 'single') startSingle();
+            else if(partyMode === 'local_p1') { window.p1Party = [...state.battleParty]; pickParty('local_p2'); }
+            else if(partyMode === 'local_p2') { window.p2Party = [...state.battleParty]; startLocal(); }
+            else if(partyMode === 'online') { renderMPLobby(); }
+        };
+
+        // --- BATTLE ---
+        const startSingle = () => {
+            let eParty = [];
+            const isLegend = Math.random() < 0.15;
+            const keys = Object.keys(POKEMON);
+            for(let i=0; i<(isLegend?1:3); i++) { 
+                const name = isLegend ? ['Articuno','Zapdos','Moltres','Mewtwo'][Math.floor(Math.random()*4)] : keys[Math.floor(Math.random()*keys.length)];
+                eParty.push(createMon(name, state.battleParty[0].lvl + (isLegend?5:0)));
+            }
+            battle = { pParty: state.battleParty, eParty: eParty, pActive: 0, eActive: 0, log: "Wild Pokemon appeared!", mode: 'ai', turn: 'p1' };
+            if(battle.pParty[0].hp <= 0) battle.pActive = battle.pParty.findIndex(m => m.hp > 0);
+            renderBattle();
+        };
+
+        const startLocal = () => { battle = { pParty: window.p1Party, eParty: window.p2Party, pActive: 0, eActive: 0, log: "P1 vs P2", mode: 'pvp', turn: 'p1' }; renderBattle(); };
+
+        const getStatusTag = (status) => status ? `<span class="status-badge status-${status}">${status.toUpperCase()}</span>` : '';
+
+        const renderBattle = () => {
+            const p = battle.pParty[battle.pActive]; const e = battle.eParty[battle.eActive];
+            const pPct = (p.hp/p.maxHp)*100; const ePct = (e.hp/e.maxHp)*100;
+            const genBalls = (party) => party.map(m => `<div class="w-2 h-2 rounded-full border border-slate-500 ${m.hp <= 0 ? 'bg-slate-700' : 'bg-green-500'}"></div>`).join('');
+            
+            ui.innerHTML = `
+                <div class="game-frame">
+                    <div id="battle-container" class="battle-view">
+                        <div class="clouds-container"><div class="cloud c1"></div><div class="cloud c2"></div></div>
+                        <div class="landscape"><div class="mountains"></div><div class="hill-back"></div><div class="hill-front"></div></div>
+                        <div class="sun"></div>
+                        <div class="platform battle-pad pad-e"></div><div class="platform battle-pad pad-p"></div>
+                        
+                        <div class="absolute top-6 left-4 info-box w-44">
+                            <div class="text-[8px] font-bold flex justify-between mb-1">
+                                <span>${e.name}</span>
+                                <div class="flex items-center"><span>Lv${e.lvl}</span>${getStatusTag(e.status)}</div>
+                            </div>
+                            <div class="h-3 bg-slate-800 rounded-full border border-white overflow-hidden">
+                                <div id="hp-e" class="h-full bg-green-500 hp-fill transition-all duration-500" style="width:${ePct}%"></div>
+                            </div>
+                            <div class="flex gap-1 mt-1 justify-end">${genBalls(battle.eParty)}</div>
+                        </div>
+                        <div id="spr-e-con" class="absolute top-[18%] right-[12%] w-32 h-32 flex items-center justify-center z-10"><img id="spr-e" src="${getSprite(e.protoId)}" class="w-full h-full object-contain anim-float"></div>
+                        
+                        <div class="absolute bottom-10 right-4 info-box w-48">
+                            <div class="text-[8px] font-bold flex justify-between mb-1">
+                                <span>${p.name}</span>
+                                <div class="flex items-center"><span>Lv${p.lvl}</span>${getStatusTag(p.status)}</div>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full border border-white overflow-hidden">
+                                <div id="hp-p" class="h-full bg-green-500 hp-fill transition-all duration-500" style="width:${pPct}%"></div>
+                            </div>
+                            <div class="text-[8px] text-right mt-1 font-mono font-bold text-white">${p.hp}/${p.maxHp} HP</div>
+                            <div class="flex gap-1 mt-1">${genBalls(battle.pParty)}</div>
+                        </div>
+                        <div id="spr-p-con" class="absolute bottom-[20%] left-[10%] w-40 h-40 flex items-center justify-center z-10"><img id="spr-p" src="${getSprite(p.protoId, true)}" class="w-full h-full object-contain anim-breathe"></div>
+                        
+                        <div id="vfx-layer" class="vfx-container absolute inset-0 pointer-events-none z-[100]"></div>
+                        <img id="pokeball" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" class="absolute bottom-0 left-0 w-10 hidden z-[50]">
+                    </div>
+                    <div class="bg-slate-900 border-t-4 border-slate-700 p-2 flex flex-col gap-2 h-44">
+                        <div class="bg-slate-800 text-white p-2 rounded-lg h-10 flex items-center justify-center text-[9px] text-center border border-slate-600"><span id="log-text">${battle.log}</span></div>
+                        <div id="grid" class="grid grid-cols-2 gap-2 h-full"></div>
+                    </div>
+                </div>`;
+            updateControls();
+        };
+
+        const updateControls = () => {
+            const grid = document.getElementById('grid');
+            const turn = battle.turn;
+            const activeMon = turn === 'p1' ? battle.pParty[battle.pActive] : battle.eParty[battle.eActive];
+            
+            if(battle.mode === 'ai' && battle.turn === 'e') { 
+                grid.innerHTML = `<p class="col-span-2 text-center text-slate-500 mt-4">Opponent is choosing...</p>`;
+                setTimeout(aiTurn, 1200); return; 
+            }
+            
+            grid.innerHTML = activeMon.moves.map(m => {
+                const moveData = MOVES[m] || MOVES['Tackle'];
+                return `<button onclick="doAction('${m}')" class="type-btn type-${moveData.type.toLowerCase()} py-3 text-[10px] uppercase border-b-4 rounded font-bold hover:brightness-110 active:border-b-0 active:translate-y-1">${m}</button>`;
+            }).join('');
+            
+            if(battle.mode === 'ai') grid.innerHTML += `<button onclick="startCatch()" class="type-btn type-catch py-3 text-[10px] border-b-4 rounded font-bold hover:brightness-110 active:border-b-0 active:translate-y-1">CATCH x${state.bag.balls}</button>`;
+            grid.innerHTML += `<button onclick="manualSwitch()" class="type-btn bg-slate-600 py-3 text-[10px] border-b-4 rounded font-bold hover:brightness-110 active:border-b-0 active:translate-y-1">SWITCH</button>`;
+        };
+
+        // --- NEW COMBAT LOGIC (SINGLE PLAYER) ---
+        window.doAction = async (mName) => {
+            const grid = document.getElementById('grid'); if(grid) grid.classList.add('opacity-50', 'pointer-events-none');
+            const isP1 = battle.turn === 'p1';
+            const atk = isP1 ? battle.pParty[battle.pActive] : battle.eParty[battle.eActive];
+            const def = isP1 ? battle.eParty[battle.eActive] : battle.pParty[battle.pActive];
+            const log = document.getElementById('log-text');
+
+            // 1. Paralysis Check
+            if (atk.status === 'par' && Math.random() < 0.25) {
+                log.innerText = `${atk.name} is paralyzed and can't move!`;
+                await wait(1500);
+                return finishTurn(isP1);
+            }
+
+            // 2. Execute Move
+            await executeMoveAnimation(atk, def, mName, isP1);
+
+            const m = MOVES[mName] || MOVES['Tackle'];
+            
+            // Damage
+            if (m.power > 0) {
+                let mult = 1; 
+                def.types.forEach(t => { if(TYPES[m.type]?.[t]) mult *= TYPES[m.type][t]; });
+                
+                // Stat Modifiers & Burn
+                let atkStat = atk.atk * (1 + ((atk.stages?.atk||0) * 0.25));
+                if (atk.status === 'brn' && m.category === 'Physical') atkStat *= 0.5;
+                let defStat = def.def * (1 + ((def.stages?.def||0) * 0.25));
+
+                const dmg = Math.max(1, Math.floor((((2*atk.lvl/5+2)*m.power*(atkStat/defStat))/50+2) * mult));
+                def.hp = Math.max(0, def.hp - dmg);
+                document.getElementById(isP1 ? 'hp-e' : 'hp-p').style.width = `${(def.hp/def.maxHp)*100}%`;
+                log.innerText = mult > 1 ? "SUPER EFFECTIVE!" : "HIT!";
+                await wait(1000);
+            }
+
+            // Effects (Status/Stages)
+            if (m.effect) {
+                const target = m.effect.target === 'self' ? atk : def;
+                if (m.effect.stat) {
+                    target.stages = target.stages || {atk:0, def:0};
+                    target.stages[m.effect.stat] = Math.max(-6, Math.min(6, target.stages[m.effect.stat] + m.effect.stages));
+                    log.innerText = `${target.name}'s ${m.effect.stat.toUpperCase()} fell!`;
+                    await wait(1000);
+                }
+                if (m.effect.status && !target.status && Math.random() < (m.effect.chance||1)) {
+                    target.status = m.effect.status;
+                    log.innerText = `${target.name} was ${m.effect.status === 'brn' ? 'BURNED' : m.effect.status === 'par' ? 'PARALYZED' : 'POISONED'}!`;
+                    AUDIO.sfx.status();
+                    await wait(1000);
+                }
+            }
+
+            // 3. Check Faint
+            if (def.hp <= 0) {
+                const defParty = isP1 ? battle.eParty : battle.pParty;
+                const next = defParty.findIndex(x => x.hp > 0);
+                if (next === -1) return endSession(isP1);
+                if(isP1) battle.eActive = next; else battle.pActive = next;
+                battle.log = `${def.name} fainted! Sent out ${defParty[next].name}!`;
+                // No status damage if battle ended round
+                battle.turn = isP1 ? (battle.mode==='ai'?'e':'p2') : 'p1';
+                renderBattle();
+                return;
+            }
+
+            finishTurn(isP1);
+        };
+
+        const finishTurn = async (isP1) => {
+            // 4. Apply Status Damage (Burn/Poison)
+            const atk = isP1 ? battle.pParty[battle.pActive] : battle.eParty[battle.eActive];
+            if ((atk.status === 'psn' || atk.status === 'brn') && atk.hp > 0) {
+                const dmg = Math.floor(atk.maxHp / 8);
+                atk.hp = Math.max(0, atk.hp - dmg);
+                document.getElementById('log-text').innerText = `${atk.name} is hurt by its status!`;
+                document.getElementById(isP1 ? 'hp-p' : 'hp-e').style.width = `${(atk.hp/atk.maxHp)*100}%`;
+                AUDIO.sfx.hit();
+                await wait(1000);
+                if(atk.hp <= 0) {
+                    const party = isP1 ? battle.pParty : battle.eParty;
+                    const next = party.findIndex(x => x.hp > 0);
+                    if (next === -1) return endSession(!isP1); // Opponent wins
+                    if(isP1) battle.pActive = next; else battle.eActive = next;
+                    battle.turn = isP1 ? (battle.mode==='ai'?'e':'p2') : 'p1';
+                    renderBattle();
+                    return;
+                }
+            }
+            
+            battle.turn = isP1 ? (battle.mode==='ai'?'e':'p2') : 'p1';
+            renderBattle();
+        };
+
+        const executeMoveAnimation = async (atk, def, mName, isP1) => {
+            const m = MOVES[mName] || MOVES['Tackle'];
+            const log = document.getElementById('log-text');
+            log.innerText = `${atk.name} used ${mName}!`;
+            const sprite = document.getElementById(isP1 ? 'spr-p' : 'spr-e');
+            const targetSpr = document.getElementById(isP1 ? 'spr-e' : 'spr-p');
+            const container = document.getElementById('battle-container');
+
+            if(m.category === 'Physical') {
+                sprite.classList.add(isP1 ? 'anim-lunge-right' : 'anim-lunge-left');
+                await wait(200); AUDIO.sfx.hit();
+                sprite.classList.remove(isP1 ? 'anim-lunge-right' : 'anim-lunge-left');
+                targetSpr.classList.add('anim-hit'); 
+            } else {
+                await spawnVFX(m.type, sprite, targetSpr);
+                AUDIO.sfx.super();
+            }
+
+            // Global Impact Shake
+            container.classList.add('anim-shake');
+            targetSpr.classList.add('anim-hit');
+            await wait(400); 
+            container.classList.remove('anim-shake');
+            targetSpr.classList.remove('anim-hit');
+        };
+
+        const aiTurn = () => window.doAction(battle.eParty[battle.eActive].moves[Math.floor(Math.random()*battle.eParty[battle.eActive].moves.length)]);
+
+        window.startCatch = async () => {
+            if(state.bag.balls <= 0) return alert("No balls!"); state.bag.balls--;
+            const ball = document.getElementById('pokeball');
+            ball.classList.remove('hidden'); ball.classList.add('anim-throw');
+            document.getElementById('grid').classList.add('opacity-50', 'pointer-events-none');
+            await wait(800); document.getElementById('spr-e').classList.add('anim-absorb');
+            await wait(600); ball.classList.remove('anim-throw'); ball.classList.add('anim-wiggle');
+            await wait(2000);
+            const e = battle.eParty[battle.eActive];
+            if(Math.random() < 0.7) {
+                AUDIO.sfx.catch();
+                const c = {...e}; c.hp = c.maxHp; c.status = null; c.stages = {atk:0,def:0};
+                if(state.team.length < 3) state.team.push(c); else state.box.push(c);
+                state.player.wins++; saveData();
+                showModal(`<h2>CAUGHT!</h2><p>${c.name} is yours!</p><button id="btn-q" class="bg-blue-600 w-full py-4 mt-4 rounded-xl">Return to Menu</button>`, {'btn-q': () => { hideModal(); renderHub(); }});
+            } else {
+                ball.classList.add('hidden'); ball.classList.remove('anim-wiggle');
+                document.getElementById('spr-e').classList.remove('anim-absorb');
+                battle.turn = 'e'; renderBattle();
+            }
+        };
+
+        const endSession = (win) => {
+            if(win) { 
+                AUDIO.sfx.win(); state.player.wins++; state.bag.potions++; state.bag.balls += 2; 
+                state.battleParty.forEach(m => { 
+                    if(m.hp>0) {
+                        m.lvl++; m.xp=0; m.maxHp+=2; m.atk+=1; m.def+=1; // Simple stats up
+                        // Evolution check
+                        if(POKEMON[m.name].evolvesTo && m.lvl >= POKEMON[m.name].evolvesAt) {
+                            alert(`What? ${m.name} is evolving!`);
+                            AUDIO.sfx.evo();
+                            m.name = POKEMON[m.name].evolvesTo;
+                            const newProto = POKEMON[m.name];
+                            m.protoId = newProto.id; m.types = newProto.type; m.moves = newProto.moves;
+                        }
+                    }
+                    m.hp=m.maxHp; m.status=null; m.stages={atk:0,def:0};
+                }); 
+                saveData(); 
+            }
+            showModal(`<h2>${win?'VICTORY!':'DEFEAT'}</h2><p>${win?'Earned rewards!':'Try again.'}</p><button id="btn-q" class="bg-blue-600 w-full py-4 mt-4 rounded-xl">Exit</button>`, {'btn-q': () => { hideModal(); renderHub(); }});
+        };
+
+        window.manualSwitch = () => {
+            const party = battle.turn === 'p1' ? battle.pParty : battle.eParty;
+            const html = party.map((m, i) => `<div onclick="execSwitch(${i})" class="bg-slate-700 p-3 rounded mb-2 flex justify-between cursor-pointer hover:bg-slate-600"><span>${m.name}</span><span>${m.hp}HP</span></div>`).join('');
+            showModal(`<h2>Switch to?</h2>${html}`);
+        };
+        window.execSwitch = (i) => { hideModal(); if(battle.turn==='p1') battle.pActive=i; else battle.eActive=i; battle.turn=battle.turn==='p1'?(battle.mode==='ai'?'e':'p2'):'p1'; renderBattle(); };
+
+        // --- MULTIPLAYER ---
+        window.renderMPLobby = () => { 
+            if (!window.IS_ONLINE) return alert("Offline"); 
+            ui.innerHTML = `<div class="game-frame bg-gray-800 p-8 flex flex-col justify-center items-center text-center"><h2 class="text-2xl text-blue-400 mb-2 font-bold">LOBBY</h2><button onclick="hostGame()" class="bg-green-600 text-white w-full max-w-xs py-4 rounded mb-4 border-b-4 border-green-800 font-bold">HOST GAME</button><div class="flex w-full max-w-xs gap-2"><input id="join-code" type="text" placeholder="CODE" class="flex-1 bg-gray-700 text-white text-center p-3 rounded border-2 border-gray-600 outline-none uppercase" maxlength="6"><button onclick="joinGame()" class="bg-yellow-600 text-white px-4 py-3 rounded border-b-4 border-yellow-800 font-bold">JOIN</button></div><button onclick="renderHub()" class="mt-8 text-gray-400 hover:text-white">Back to Hub</button></div>`; 
+        };
+
+        window.hostGame = async () => { 
+            const battleId = Math.floor(100000+Math.random()*900000).toString(); 
+            mpRole='p1'; mpBattleId=battleId; 
+            const ref=window.db_doc(window.GAME_DB,'artifacts',window.APP_ID,'public','data','battles',battleId); 
+            await window.db_setDoc(ref,{p1:{name:state.player.name,party:state.battleParty,activeIdx:0},p2:null,status:'waiting',turn:'p1',lastAction:null,timestamp:Date.now()}); 
+            ui.innerHTML=`<div class="game-frame bg-gray-800 flex flex-col items-center justify-center text-center p-4"><h2 class="text-xl text-white mb-2">Waiting...</h2><div class="bg-blue-900 text-blue-200 text-3xl font-mono p-4 rounded border-2 border-blue-500 mb-4 select-all">${battleId}</div><button onclick="renderHub()" class="mt-8 text-red-400">Cancel</button></div>`; 
+            listenToBattle(battleId); 
+        };
+
+        window.joinGame = async () => { 
+            const battleId=document.getElementById('join-code').value; 
+            mpRole='p2'; mpBattleId=battleId; 
+            const ref=window.db_doc(window.GAME_DB,'artifacts',window.APP_ID,'public','data','battles',battleId); 
+            await window.db_runTransaction(window.GAME_DB, async(t)=>{ 
+                const doc=await t.get(ref); 
+                if(!doc.exists()) throw "Err"; 
+                t.update(ref,{p2:{name:state.player.name,party:state.battleParty,activeIdx:0},status:'active'}); 
+            }); 
+            listenToBattle(battleId); 
+        };
+
+        const listenToBattle = (id) => { 
+            const ref=window.db_doc(window.GAME_DB,'artifacts',window.APP_ID,'public','data','battles',id); 
+            mpUnsub=window.db_onSnapshot(ref,(d)=>{ 
+                const data=d.data(); 
+                if(!data) return; 
+                if(data.status==='active') renderMPBattle(data); 
+                else if(data.status==='finished') { 
+                    showModal(`<h2>GAME OVER</h2><p>${data.winner===mpRole?'You':'Opponent'} Won!</p><button onclick="quitHub()" class="mt-4 bg-gray-600 w-full py-2 rounded">Exit</button>`, {'quitHub': renderHub}); 
+                } 
+            }); 
+        };
+
+        const renderMPBattle = (data) => {
+            const me = mpRole==='p1'?data.p1:data.p2; const op = mpRole==='p1'?data.p2:data.p1;
+            const mMon = me.party[me.activeIdx]; const oMon = op.party[op.activeIdx];
+            
+            ui.innerHTML = `
+                <div class="game-frame bg-gray-800"><div id="battle-container" class="battle-view"><div class="clouds-container"><div class="cloud c1"></div><div class="cloud c2"></div></div><div class="landscape"><div class="mountains"></div><div class="hill-back"></div><div class="hill-front"></div></div><div class="sun"></div><div class="platform battle-pad pad-e"></div><div class="platform battle-pad pad-p"></div>
+                
+                <div class="absolute top-6 left-4 info-box w-40">
+                    <div class="text-[10px] font-bold text-white flex justify-between">
+                        <span>${oMon.name}</span>
+                        <div class="flex items-center">${getStatusTag(oMon.status)}</div>
+                    </div>
+                    <div class="h-2 bg-gray-600 rounded-full mt-1 border border-white overflow-hidden"><div class="h-full bg-green-500 hp-fill" style="width:${(oMon.hp/oMon.maxHp)*100}%"></div></div>
+                </div>
+                <div id="spr-e-con" class="absolute top-[18%] right-[10%] w-32 h-32 flex items-center justify-center"><img id="spr-e" src="${getSprite(oMon.protoId)}" class="w-full h-full object-contain anim-float"></div>
+                
+                <div class="absolute bottom-10 right-4 info-box w-44">
+                    <div class="text-[10px] font-bold text-white flex justify-between">
+                        <span>${mMon.name}</span>
+                        <div class="flex items-center">${getStatusTag(mMon.status)}</div>
+                    </div>
+                    <div class="h-3 bg-gray-600 rounded-full mt-1 border border-white overflow-hidden"><div class="h-full bg-green-500 hp-fill" style="width:${(mMon.hp/mMon.maxHp)*100}%"></div></div>
+                    <div class="text-[10px] text-right mt-1 font-mono text-gray-900 font-bold">${mMon.hp}/${mMon.maxHp}</div>
+                </div>
+                <div id="spr-p-con" class="absolute bottom-[20%] left-[10%] w-40 h-40 flex items-center justify-center"><img id="spr-p" src="${getSprite(mMon.protoId, true)}" class="w-full h-full object-contain anim-breathe"></div>
+                <div id="vfx-layer" class="vfx-container absolute inset-0 pointer-events-none"></div></div>
+                
+                <div class="bg-gray-900 border-t-4 border-gray-700 p-2 flex flex-col gap-2 h-40"><div class="bg-gray-800 text-white p-2 rounded h-8 flex items-center justify-center text-[10px] text-center border border-gray-600"><span id="mp-log">${data.turn===mpRole?'Your Turn':'Waiting...'}</span></div><div id="mp-grid" class="grid grid-cols-2 gap-2 h-full ${data.turn!==mpRole?'opacity-50 pointer-events-none':''}"></div></div></div>`;
+            
+            document.getElementById('mp-grid').innerHTML = mMon.moves.map(m => {
+                const moveData = MOVES[m] || MOVES['Tackle'];
+                return `<button onclick="sendMPMove('${m}')" class="type-btn type-${moveData.type.toLowerCase()} border-b-4 rounded font-bold text-[10px] hover:brightness-110 h-10">${m}</button>`;
+            }).join('');
+
+            // Animations
+            if(data.lastAction && data.lastAction.timestamp > (window.lp || 0) && data.lastAction.turn !== mpRole) { 
+                window.lp = data.lastAction.timestamp; 
+                document.getElementById('mp-log').innerText = `${op.name} used ${data.lastAction.move}!`; 
+                executeMoveAnimation(data.p2, data.p1, data.lastAction.move, false); // Just play anim
+            }
+        };
+
+        window.sendMPMove = async (moveName) => {
+            const ref=window.db_doc(window.GAME_DB,'artifacts',window.APP_ID,'public','data','battles',mpBattleId); 
+            const me=mpRole; const op=mpRole==='p1'?'p2':'p1';
+            
+            // Local visual feedback
+            executeMoveAnimation(null, null, moveName, true); 
+            document.getElementById('mp-log').innerText = `You used ${moveName}!`;
+
+            await window.db_runTransaction(window.GAME_DB, async(t)=>{
+                const d=(await t.get(ref)).data(); if(d.turn!==me) return;
+                const mMon=d[me].party[d[me].activeIdx]; const oMon=d[op].party[d[op].activeIdx];
+                const moveData = MOVES[moveName] || MOVES['Tackle']; 
+                
+                // Damage Calculation
+                let mult = 1;
+                // Note: Full type chart check difficult in trans, keeping simple
+                let atkStat = mMon.atk * (1 + ((mMon.stages?.atk||0) * 0.25));
+                if (mMon.status === 'brn' && moveData.category === 'Physical') atkStat *= 0.5;
+                let defStat = oMon.def * (1 + ((oMon.stages?.def||0) * 0.25));
+
+                const dmg = Math.floor((((2*mMon.lvl/5+2)*moveData.power*(atkStat/defStat))/50+2));
+                const newHp = Math.max(0, oMon.hp - dmg);
+                d[op].party[d[op].activeIdx].hp = newHp;
+
+                // Status Effects
+                if(moveData.effect) {
+                    if(moveData.effect.stat) {
+                        d[op].party[d[op].activeIdx].stages = d[op].party[d[op].activeIdx].stages || {atk:0,def:0};
+                        let val = d[op].party[d[op].activeIdx].stages[moveData.effect.stat];
+                        d[op].party[d[op].activeIdx].stages[moveData.effect.stat] = Math.max(-6, Math.min(6, val + moveData.effect.stages));
+                    }
+                    if(moveData.effect.status && Math.random() < (moveData.effect.chance||1)) {
+                         d[op].party[d[op].activeIdx].status = moveData.effect.status;
+                    }
+                }
+                
+                let up={[`${op}.party`]:d[op].party, turn:op, lastAction:{turn:me,move:moveName,timestamp:Date.now()}};
+                if(newHp<=0) {
+                    let nIdx=-1; for(let i=0;i<d[op].party.length;i++) if(d[op].party[i].hp>0) { nIdx=i; break; }
+                    if(nIdx!==-1) { up[`${op}.activeIdx`]=nIdx; up.lastAction.switch=true; } else { up.status='finished'; up.winner=me; }
+                }
+                t.update(ref,up);
+            });
+        };
+        
+        // Start
+        window.addEventListener('click', () => AUDIO.init(), {once: true});
+        renderStart();
+    </script>
+
+<iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" tabindex="-1" vspace="0" width="100%" aria-hidden="true" id="I0_1769772727434" name="I0_1769772727434" src="https://bard-frontend.firebaseapp.com/__/auth/iframe?apiKey=AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY&amp;appName=%5BDEFAULT%5D&amp;v=11.6.1&amp;eid=p&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.2kN9-TZiXrM.O%2Fd%3D1%2Frs%3DAHpOoo_B4hu0FeWRuWHfxnZ3V0WubwN7Qw%2Fm%3D__features__#id=I0_1769772727434&amp;_gfid=I0_1769772727434&amp;parent=blob%3A%2F%2F&amp;pfname=&amp;rpctoken=13184785" style="position: absolute; top: -100px; width: 1px; height: 1px;"></iframe></body></html>
